@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "f8ac5471-48ce-4491-b42b-aa2cf8e445a6"
+      }
+    },
+    "android": {
+      "package": "com.addactech.lyricsnotemplate"
+    }
+  }
+}
