@@ -28,9 +28,11 @@ export default function MainScreen() {
     const getMySongs = async () => {
       try {
         const songs = await AsyncStorage.getItem("@mySongs");
-        console.log("Canciones guardadas desde MainScreen:", songs);
+        // console.log("Canciones guardadas desde MainScreen:", songs);
         if (songs) {
           setMySongs(JSON.parse(songs));
+        } else {
+          setMySongs([]);
         }
       } catch (error) {
         console.error("Error al obtener las canciones guardadas:", error);
