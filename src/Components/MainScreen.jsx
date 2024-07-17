@@ -52,6 +52,7 @@ export default function MainScreen() {
       const response = await fetch(api);
       if (response.ok) {
         const data = await response.json();
+        console.log("Search data:", " " + data.song + " " + data.artist);
         setSong(data.lyrics);
       } else {
         console.error("Error al obtener las letras:", response.status);
@@ -65,11 +66,13 @@ export default function MainScreen() {
 
   const downloadSong = async () => {
     //crear objeto de cancion
+    console.log("Download 1: " + songToSave.song);
     setSongToSave({
       song: songData.song,
       artist: songData.artist,
       lyrics: song,
     });
+    console.log("Download 2: " + songToSave.song);
     setMySongs([...mySongs, songToSave]);
     try {
       await AsyncStorage.setItem("@mySongs", JSON.stringify(mySongs));
